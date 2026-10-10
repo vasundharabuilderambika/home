@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasundhara Builders | Building Better Tomorrows</title>
+    
+    <!-- Fonts: Cinzel for Headings, Inter for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#06261b',
+                        'brand-darker': '#041c14',
+                        'brand-gold': '#dfba73',
+                        'brand-gold-hover': '#c9a35d',
+                        'brand-light': '#f9f8f6',
+                        'brand-gray': '#e5e3de',
+                    },
+                    fontFamily: {
+                        'serif': ['Cinzel', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 4px 20px -2px rgba(223, 186, 115, 0.4)',
+                        'premium': '0 10px 30px -5px rgba(0, 0, 0, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Styles for nuances */
+        .gold-gradient-text {
+            background: linear-gradient(to right, #dfba73, #f5d796, #dfba73);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 3s linear infinite;
+        }
+        
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(6, 38, 27, 0.95) 0%, rgba(6, 38, 27, 0.7) 50%, rgba(6, 38, 27, 0.3) 100%), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+        
+        .footer-bg {
+            background-image: linear-gradient(to right, rgba(6, 38, 27, 0.97), rgba(6, 38, 27, 0.97)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Image hover zoom utility */
+        .img-zoom-container { overflow: hidden; }
+        .img-zoom-container img { transition: transform 0.8s ease; }
+        .img-zoom-container:hover img { transform: scale(1.1); }
+        
+        /* Nav scroll transition */
+        #navbar { transition: all 0.4s ease; }
+        .nav-scrolled {
+            background-color: rgba(6, 38, 27, 0.95);
+            backdrop-filter: blur(10px);
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-brand-light antialiased overflow-x-hidden">
+
+    <nav id="navbar" class="fixed top-0 w-full z-50 py-5 px-6 md:px-12 lg:px-24 flex items-center justify-between border-b border-white/10 text-white transition-all duration-300">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+            <div class="text-brand-gold text-3xl group-hover:rotate-180 transition-transform duration-700"><i class="fa-brands fa-envira"></i></div>
+            <div class="flex flex-col">
+                <span class="font-serif text-2xl tracking-widest font-bold uppercase leading-none">Vasundhara</span>
+                <span class="text-[0.65rem] tracking-[0.35em] text-brand-gold uppercase mt-1">Builders</span>
+            </div>
+        </a>
+
+        <!-- Links -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a href="#" class="text-brand-gold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[1px] after:bg-brand-gold">Home</a>
+            <a href="#" class="hover:text-brand-gold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold hover:after:w-full after:transition-all after:duration-300">About</a>
+            <a href="#" class="hover:text-brand-gold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold hover:after:w-full after:transition-all after:duration-300">Properties</a>
+            <a href="#" class="hover:text-brand-gold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold hover:after:w-full after:transition-all after:duration-300">Services</a>
+            <a href="#" class="hover:text-brand-gold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold hover:after:w-full after:transition-all after:duration-300">Process</a>
+            <a href="#" class="hover:text-brand-gold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold hover:after:w-full after:transition-all after:duration-300">Leadership</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="hidden md:block">
+            <a href="#" class="bg-brand-gold text-brand-dark px-6 py-2.5 rounded text-sm font-bold tracking-wide uppercase hover:bg-white hover:text-brand-dark hover:shadow-gold-glow transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-0.5">
+                Enquire Now <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="md:hidden text-2xl text-brand-gold hover:text-white transition-colors"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+
+    <section class="hero-bg h-screen min-h-[700px] flex items-center relative pt-20">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="max-w-3xl text-white">
+                <div class="flex items-center gap-4 mb-6" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="h-[1px] w-16 bg-brand-gold"></div>
+                    <span class="uppercase tracking-[0.25em] text-xs font-semibold text-brand-gold">Welcome to Vasundhara Builders</span>
+                </div>
+                
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.15] mb-6 drop-shadow-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    BUILDING BETTER<br>
+                    <span class="text-brand-gold font-bold">TOMORROWS</span><br>
+                    TOGETHER
+                </h1>
+                
+                <p class="text-gray-200 text-lg md:text-xl mb-10 max-w-xl font-light leading-relaxed" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    Vasundhara Builders is committed to creating high-quality residential and commercial spaces that bring comfort, value and a better future.
+                </p>
+                
+                <div class="flex flex-wrap items-center gap-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                    <a href="#" class="bg-brand-gold text-brand-dark px-8 py-4 rounded font-semibold uppercase tracking-wide text-sm hover:bg-white hover:shadow-gold-glow transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-1">
+                        Explore Projects <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#" class="border-2 border-white/50 hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/10 px-8 py-4 rounded font-semibold uppercase tracking-wide text-sm backdrop-blur-sm transition-all duration-300 transform hover:-translate-y-1">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Badge -->
+        <div class="floating absolute bottom-12 right-0 bg-brand-dark/80 backdrop-blur-md border-l-4 border-brand-gold p-5 pr-12 hidden md:flex items-center gap-5 rounded-l-lg shadow-2xl" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="1000">
+            <div class="text-brand-gold text-4xl"><i class="fa-solid fa-house-chimney-window"></i></div>
+            <div class="text-white text-sm font-medium">
+                <span class="font-serif text-lg tracking-wide">Quality Homes</span><br>
+                <span class="text-gray-400 font-light text-xs tracking-wider uppercase">for a Brighter Future</span>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-70">
+            <span class="text-[0.6rem] uppercase tracking-[0.2em] text-white">Scroll</span>
+            <i class="fa-solid fa-arrow-down text-brand-gold text-sm"></i>
+        </div>
+    </section>
+
+    <section class="bg-white border-b border-gray-100 relative z-10 shadow-premium">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 lg:divide-x divide-gray-100">
+                <!-- Feature 1 -->
+                <div class="p-10 text-center flex flex-col items-center group cursor-pointer hover:bg-brand-light transition-colors duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 mb-5 flex items-center justify-center text-brand-gold text-4xl group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-brand-dark mb-2 uppercase tracking-wide">Quality Construction</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Built with premium materials<br>and expert craftsmanship.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="p-10 text-center flex flex-col items-center group cursor-pointer hover:bg-brand-light transition-colors duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 mb-5 flex items-center justify-center text-brand-gold text-4xl group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-brand-dark mb-2 uppercase tracking-wide">Trust & Transparency</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Honest dealings and<br>clear communication.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="p-10 text-center flex flex-col items-center group cursor-pointer hover:bg-brand-light transition-colors duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 mb-5 flex items-center justify-center text-brand-gold text-4xl group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-brand-dark mb-2 uppercase tracking-wide">Sustainable Living</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Thoughtful designs for<br>a greener tomorrow.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="p-10 text-center flex flex-col items-center group cursor-pointer hover:bg-brand-light transition-colors duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 mb-5 flex items-center justify-center text-brand-gold text-4xl group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-lg text-brand-dark mb-2 uppercase tracking-wide">Customer First</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Your dreams are our<br>ultimate priority.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-light">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="h-[1px] w-12 bg-brand-gold"></div>
+                    <span class="uppercase tracking-[0.25em] text-xs font-semibold text-brand-gold">Our Projects</span>
+                    <div class="h-[1px] w-12 bg-brand-gold"></div>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-dark mb-6">FEATURED PROPERTIES</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg font-light">Discover thoughtfully designed homes and commercial spaces that match your lifestyle and aspirations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Property 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 group transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-72 img-zoom-container">
+                        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Villa" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 bg-brand-gold text-brand-dark text-xs font-bold px-4 py-2 uppercase tracking-widest rounded shadow-md">Premium Villas</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-gray-500 text-sm mb-4">
+                            <i class="fa-solid fa-location-dot text-brand-gold"></i>
+                            <span class="font-medium tracking-wide">Green Valley, Ambikapur</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-8 leading-relaxed line-clamp-2">Spacious villas with modern architecture, private gardens and premium amenities for a luxurious lifestyle.</p>
+                        <a href="#" class="inline-flex items-center gap-2 font-serif font-bold text-brand-dark hover:text-brand-gold transition-colors uppercase tracking-wider text-sm">
+                            View Details <i class="fa-solid fa-arrow-right-long text-brand-gold group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Property 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 group transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-72 img-zoom-container">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Apartment" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 bg-brand-gold text-brand-dark text-xs font-bold px-4 py-2 uppercase tracking-widest rounded shadow-md">Luxury Apartments</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-gray-500 text-sm mb-4">
+                            <i class="fa-solid fa-location-dot text-brand-gold"></i>
+                            <span class="font-medium tracking-wide">Sunrise Enclave, Ambikapur</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-8 leading-relaxed line-clamp-2">Modern apartments with world-class facilities, lush green surroundings, and excellent connectivity.</p>
+                        <a href="#" class="inline-flex items-center gap-2 font-serif font-bold text-brand-dark hover:text-brand-gold transition-colors uppercase tracking-wider text-sm">
+                            View Details <i class="fa-solid fa-arrow-right-long text-brand-gold group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Property 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 group transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative h-72 img-zoom-container">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Commercial" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 bg-brand-gold text-brand-dark text-xs font-bold px-4 py-2 uppercase tracking-widest rounded shadow-md">Commercial Spaces</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 text-gray-500 text-sm mb-4">
+                            <i class="fa-solid fa-location-dot text-brand-gold"></i>
+                            <span class="font-medium tracking-wide">Business Hub, Ambikapur</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-8 leading-relaxed line-clamp-2">Prime commercial spaces tailored for your business growth, equipped with modern infrastructure.</p>
+                        <a href="#" class="inline-flex items-center gap-2 font-serif font-bold text-brand-dark hover:text-brand-gold transition-colors uppercase tracking-wider text-sm">
+                            View Details <i class="fa-solid fa-arrow-right-long text-brand-gold group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-0 bg-white overflow-hidden">
+        <div class="flex flex-col lg:flex-row">
+            <!-- Image Side -->
+            <div class="lg:w-1/2 min-h-[500px] lg:min-h-auto relative img-zoom-container" data-aos="fade-right" data-aos-duration="1000">
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Architectural Plans" class="absolute inset-0 w-full h-full object-cover">
+                <!-- Overlay badge -->
+                <div class="absolute top-10 left-10 bg-white p-6 rounded-lg shadow-2xl flex items-center gap-4 floating hidden md:flex">
+                    <div class="text-brand-gold text-4xl font-serif font-bold">15+</div>
+                    <div class="text-sm font-semibold uppercase tracking-wider text-brand-dark leading-tight">Years of<br>Excellence</div>
+                </div>
+            </div>
+            
+            <!-- Content Side -->
+            <div class="lg:w-1/2 p-10 md:p-16 lg:p-24 bg-white flex flex-col justify-center" data-aos="fade-left" data-aos-duration="1000">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="h-[1px] w-12 bg-brand-gold"></div>
+                    <span class="uppercase tracking-[0.25em] text-xs font-semibold text-brand-gold">About Vasundhara Builders</span>
+                </div>
+                
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-dark mb-8 leading-tight">
+                    CRAFTING SPACES<br>
+                    <span class="gold-gradient-text">FOR A BRIGHTER FUTURE</span>
+                </h2>
+                
+                <p class="text-gray-600 mb-10 text-lg font-light leading-relaxed">
+                    With a vision to build meaningful spaces, Vasundhara Builders brings together innovation, quality and trust. We specialize in residential and commercial projects that combine modern design, superior construction and long-term value.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-brand-light p-3 rounded text-brand-gold text-xl"><i class="fa-solid fa-medal"></i></div>
+                        <div>
+                            <h4 class="font-serif font-bold text-brand-dark mb-1">Expert Experience</h4>
+                            <p class="text-sm text-gray-500">Decades of proven real estate mastery.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-brand-light p-3 rounded text-brand-gold text-xl"><i class="fa-solid fa-helmet-safety"></i></div>
+                        <div>
+                            <h4 class="font-serif font-bold text-brand-dark mb-1">Skilled Team</h4>
+                            <p class="text-sm text-gray-500">Dedicated professionals at every step.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-brand-light p-3 rounded text-brand-gold text-xl"><i class="fa-regular fa-clock"></i></div>
+                        <div>
+                            <h4 class="font-serif font-bold text-brand-dark mb-1">On-Time Delivery</h4>
+                            <p class="text-sm text-gray-500">Committed to strict project timelines.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-brand-light p-3 rounded text-brand-gold text-xl"><i class="fa-regular fa-heart"></i></div>
+                        <div>
+                            <h4 class="font-serif font-bold text-brand-dark mb-1">Customer Centric</h4>
+                            <p class="text-sm text-gray-500">Your satisfaction is our foundation.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <a href="#" class="inline-flex items-center gap-3 border-2 border-brand-gold text-brand-dark px-8 py-3.5 rounded font-bold uppercase tracking-wide text-sm hover:bg-brand-gold hover:text-white transition-all duration-300 shadow-sm hover:shadow-gold-glow">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-dark relative overflow-hidden">
+        <!-- Subtle background pattern -->
+        <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="h-[1px] w-12 bg-brand-gold"></div>
+                    <span class="uppercase tracking-[0.25em] text-xs font-semibold text-brand-gold">What We Do</span>
+                    <div class="h-[1px] w-12 bg-brand-gold"></div>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">OUR SERVICES</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg font-light">Comprehensive real estate solutions designed for a better tomorrow.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-brand-darker border border-brand-gold/20 rounded-xl p-12 text-center hover:bg-white/5 hover:border-brand-gold/60 transition-all duration-500 group cursor-pointer transform hover:-translate-y-2 shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold text-4xl mb-8 group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-500"><i class="fa-solid fa-house-user"></i></div>
+                    <h3 class="font-serif font-bold text-2xl text-white mb-4">Residential Houses</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed font-light">Independent homes offering unparalleled space, privacy, and absolute comfort for your family.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-brand-darker border border-brand-gold/20 rounded-xl p-12 text-center hover:bg-white/5 hover:border-brand-gold/60 transition-all duration-500 group cursor-pointer transform hover:-translate-y-2 shadow-2xl relative" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Subtle highlight for middle card -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-brand-gold/5 to-transparent rounded-xl pointer-events-none"></div>
+                    
+                    <div class="w-20 h-20 mx-auto rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold text-4xl mb-8 group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-500"><i class="fa-solid fa-building"></i></div>
+                    <h3 class="font-serif font-bold text-2xl text-white mb-4">Apartment Solutions</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed font-light">Modern living spaces equipped with excellent amenities, security, and prime connectivity.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-brand-darker border border-brand-gold/20 rounded-xl p-12 text-center hover:bg-white/5 hover:border-brand-gold/60 transition-all duration-500 group cursor-pointer transform hover:-translate-y-2 shadow-2xl" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold text-4xl mb-8 group-hover:bg-brand-gold group-hover:text-brand-dark transition-all duration-500"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3 class="font-serif font-bold text-2xl text-white mb-4">Property Guidance</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed font-light">Personalised expert support to help you navigate options and make the right choice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-light relative">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="h-[1px] w-12 bg-brand-gold"></div>
+                    <span class="uppercase tracking-[0.25em] text-xs font-semibold text-brand-gold">Your Home Journey</span>
+                    <div class="h-[1px] w-12 bg-brand-gold"></div>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-dark mb-6">A SIMPLE, TRANSPARENT PROCESS</h2>
+                <p class="text-gray-600 text-lg font-light max-w-2xl mx-auto">From your first enquiry to your dream home, we are with you at every single step.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative">
+                <!-- Decorative Line for Desktop -->
+                <div class="hidden lg:block absolute top-[40px] left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 text-center px-2 group" data-aos="fade-down" data-aos-delay="100">
+                    <div class="w-24 h-24 mx-auto bg-white border-2 border-brand-gold rounded-full flex items-center justify-center text-3xl font-serif font-bold text-brand-gold mb-8 shadow-lg group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300 relative">
+                        01
+                        <!-- Arrow for mobile/tablet -->
+                        <div class="lg:hidden absolute -bottom-8 left-1/2 -translate-x-1/2 text-brand-gold/50"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-brand-dark mb-3">Share Your Vision</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Tell us your specific requirements, desired location, and budget.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="relative z-10 text-center px-2 group" data-aos="fade-down" data-aos-delay="300">
+                    <div class="w-24 h-24 mx-auto bg-brand-gold border-2 border-brand-gold rounded-full flex items-center justify-center text-3xl font-serif font-bold text-white mb-8 shadow-gold-glow relative">
+                        02
+                        <div class="lg:hidden absolute -bottom-8 left-1/2 -translate-x-1/2 text-brand-gold/50"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-brand-dark mb-3">Explore Options</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Discover the best property choices curated just for you.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 text-center px-2 group" data-aos="fade-down" data-aos-delay="500">
+                    <div class="w-24 h-24 mx-auto bg-white border-2 border-brand-gold rounded-full flex items-center justify-center text-3xl font-serif font-bold text-brand-gold mb-8 shadow-lg group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300 relative">
+                        03
+                        <div class="lg:hidden absolute -bottom-8 left-1/2 -translate-x-1/2 text-brand-gold/50"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-brand-dark mb-3">Review Details</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Get complete, transparent information on pricing and specs.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative z-10 text-center px-2 group" data-aos="fade-down" data-aos-delay="700">
+                    <div class="w-24 h-24 mx-auto bg-white border-2 border-brand-gold rounded-full flex items-center justify-center text-3xl font-serif font-bold text-brand-gold mb-8 shadow-lg group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300">
+                        04
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-brand-dark mb-3">Make Decision</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Choose your dream home with absolute confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-dark">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="h-[1px] w-8 bg-brand-gold"></div>
+                    <span class="uppercase tracking-[0.25em] text-xs font-semibold text-brand-gold">The People Behind Our Vision</span>
+                    <div class="h-[1px] w-8 bg-brand-gold"></div>
+                </div>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-white mb-6">OUR FOUNDERS & LEADERSHIP</h2>
+                <p class="text-gray-400 max-w-3xl mx-auto text-lg font-light leading-relaxed">Built on vision, strengthened by partnership, and guided by an unwavering commitment to creating better places for generations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-brand-darker border border-brand-gold/20 rounded-xl p-8 text-center hover:border-brand-gold/60 transition-colors duration-300 group" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-36 h-36 mx-auto rounded-full overflow-hidden border-2 border-brand-gold p-1.5 mb-6 group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://i.ibb.co/9HMHH8fK/Screenshot-20261010-161654-Instagram.png" alt="Mr. Tinku Wasnik" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-white mb-2">Mr. Tinku Wasnik</h3>
+                    <div class="h-[1px] w-12 bg-brand-gold/50 mx-auto mb-2 group-hover:w-24 transition-all duration-300"></div>
+                    <p class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Founder & Owner</p>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-brand-darker border border-brand-gold/20 rounded-xl p-8 text-center hover:border-brand-gold/60 transition-colors duration-300 group" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-36 h-36 mx-auto rounded-full overflow-hidden border-2 border-brand-gold p-1.5 mb-6 group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://i.ibb.co/4njsr9RV/Screenshot-20261010-161636-Instagram.png" alt="Dr. Sangeeta Wasnik" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-white mb-2">Dr. Sangeeta Wasnik</h3>
+                    <div class="h-[1px] w-12 bg-brand-gold/50 mx-auto mb-2 group-hover:w-24 transition-all duration-300"></div>
+                    <p class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Co-founder & Owner</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-brand-darker border border-brand-gold/20 rounded-xl p-8 text-center hover:border-brand-gold/60 transition-colors duration-300 group" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="w-36 h-36 mx-auto rounded-full overflow-hidden border-2 border-brand-gold p-1.5 mb-6 group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://i.ibb.co/PZBDsgPx/Screenshot-20261010-162622-Whats-App.png" alt="Janvi Wasnik" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-white mb-2">Janvi Wasnik</h3>
+                    <div class="h-[1px] w-12 bg-brand-gold/50 mx-auto mb-2 group-hover:w-24 transition-all duration-300"></div>
+                    <p class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Future Owner</p>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="bg-brand-darker border border-brand-gold/20 rounded-xl p-8 text-center hover:border-brand-gold/60 transition-colors duration-300 group" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="w-36 h-36 mx-auto rounded-full overflow-hidden border-2 border-brand-gold p-1.5 mb-6 group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://i.ibb.co/qF2fPFQs/Screenshot-20261010-162647-Whats-App.png" alt="Yashika Wasnik (Misthi)" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-white mb-2">Yashika Wasnik</h3>
+                    <div class="h-[1px] w-12 bg-brand-gold/50 mx-auto mb-2 group-hover:w-24 transition-all duration-300"></div>
+                    <p class="text-brand-gold text-xs uppercase tracking-widest font-semibold">Future Owner (Misthi)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNlN2U1ZTQiIGZpbGwtb3BhY2l0eT0iMC40Ii8+PC9zdmc+')]">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="h-[1px] w-12 bg-brand-gold"></div>
+                    <span class="uppercase tracking-[0.25em] text-xs font-semibold text-brand-gold">What Our Clients Say</span>
+                    <div class="h-[1px] w-12 bg-brand-gold"></div>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-dark mb-6">TESTIMONIALS</h2>
+                <p class="text-gray-500 text-lg font-light max-w-xl mx-auto">Hear from our happy clients who chose Vasundhara Builders for their dream spaces.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-10 rounded-xl shadow-premium border border-gray-100 relative group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -top-5 left-10 text-brand-gold text-6xl font-serif leading-none bg-white px-2 group-hover:-translate-y-2 transition-transform duration-300">"</div>
+                    <p class="text-gray-600 mb-10 italic text-sm leading-relaxed mt-4">"Vasundhara Builders made our dream home a reality. The quality of construction and attention to detail truly impressed us."</p>
+                    <div class="flex items-center gap-4 border-t border-gray-100 pt-6">
+                        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Client" class="w-14 h-14 rounded-full object-cover border-2 border-brand-gold/30">
+                        <div>
+                            <h4 class="font-serif font-bold text-brand-dark text-lg">Rahul Sharma</h4>
+                            <p class="text-xs text-brand-gold font-medium uppercase tracking-wider">Homeowner, Ambikapur</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-10 rounded-xl shadow-premium border border-gray-100 relative group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute -top-5 left-10 text-brand-gold text-6xl font-serif leading-none bg-white px-2 group-hover:-translate-y-2 transition-transform duration-300">"</div>
+                    <p class="text-gray-600 mb-10 italic text-sm leading-relaxed mt-4">"Professional, transparent and highly reliable. We are extremely satisfied with our commercial space. The process was seamless."</p>
+                    <div class="flex items-center gap-4 border-t border-gray-100 pt-6">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Client" class="w-14 h-14 rounded-full object-cover border-2 border-brand-gold/30">
+                        <div>
+                            <h4 class="font-serif font-bold text-brand-dark text-lg">Priya Nair</h4>
+                            <p class="text-xs text-brand-gold font-medium uppercase tracking-wider">Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-10 rounded-xl shadow-premium border border-gray-100 relative group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="absolute -top-5 left-10 text-brand-gold text-6xl font-serif leading-none bg-white px-2 group-hover:-translate-y-2 transition-transform duration-300">"</div>
+                    <p class="text-gray-600 mb-10 italic text-sm leading-relaxed mt-4">"The team is very supportive and kept us updated at every single step. Highly recommended for anyone looking for quality."</p>
+                    <div class="flex items-center gap-4 border-t border-gray-100 pt-6">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Client" class="w-14 h-14 rounded-full object-cover border-2 border-brand-gold/30">
+                        <div>
+                            <h4 class="font-serif font-bold text-brand-dark text-lg">Amit Verma</h4>
+                            <p class="text-xs text-brand-gold font-medium uppercase tracking-wider">Investor, Pune</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-bg relative text-white border-t-4 border-brand-gold">
+        <!-- Content wrapper -->
+        <div class="container mx-auto px-6 md:px-12 lg:px-24 py-20 relative z-10" data-aos="fade-in" data-aos-duration="1500">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-start">
+                
+                <!-- CTA & Contact Info -->
+                <div class="lg:col-span-5">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="text-brand-gold text-4xl"><i class="fa-brands fa-envira"></i></div>
+                        <div class="flex flex-col">
+                            <span class="font-serif text-3xl tracking-widest font-bold uppercase leading-none">Vasundhara</span>
+                            <span class="text-[0.7rem] tracking-[0.4em] text-brand-gold uppercase mt-1">Builders</span>
+                        </div>
+                    </div>
+                    <h2 class="font-serif text-3xl mb-4 text-white font-bold leading-tight">LET'S BUILD YOUR<br><span class="text-brand-gold">DREAM TOGETHER</span></h2>
+                    <p class="text-gray-400 text-sm mb-10 font-light">Have a question or want to know more about our projects?<br>Reach out to us — we're here to help.</p>
+                    
+                    <div class="space-y-6">
+                        <a href="#" class="flex items-center gap-4 group w-max">
+                            <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-brand-gold text-xl group-hover:bg-brand-gold group-hover:text-brand-dark transition-colors"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div>
+                                <p class="text-xs text-gray-400 uppercase tracking-wider">Chat on WhatsApp</p>
+                                <p class="font-medium text-white group-hover:text-brand-gold transition-colors">+91 88105 42370</p>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-center gap-4 group w-max">
+                            <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-brand-gold text-xl group-hover:bg-brand-gold group-hover:text-brand-dark transition-colors"><i class="fa-regular fa-envelope"></i></div>
+                            <div>
+                                <p class="text-xs text-gray-400 uppercase tracking-wider">Email Us</p>
+                                <p class="font-medium text-white group-hover:text-brand-gold transition-colors">info@vasundharabuilders.in</p>
+                            </div>
+                        </a>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-brand-gold text-xl"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <p class="text-xs text-gray-400 uppercase tracking-wider">Our Location</p>
+                                <p class="font-medium text-white">Ambikapur, Chhattisgarh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spacer -->
+                <div class="hidden lg:block lg:col-span-2"></div>
+
+                <!-- Footer Navigation & Socials -->
+                <div class="lg:col-span-5 flex flex-col items-start lg:items-end gap-12 pt-4">
+                    
+                    <h3 class="font-serif font-bold text-xl text-white uppercase tracking-wider mb-2 lg:hidden">Quick Links</h3>
+                    <!-- Quick Links with Icons -->
+                    <div class="flex flex-wrap justify-start lg:justify-end gap-x-8 gap-y-6 text-sm text-gray-300 max-w-md">
+                        <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition-colors w-[120px] lg:w-auto">
+                            <i class="fa-solid fa-house text-lg w-5 text-center"></i>
+                            <span class="font-medium tracking-wide">Home</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition-colors w-[120px] lg:w-auto">
+                            <i class="fa-solid fa-circle-info text-lg w-5 text-center"></i>
+                            <span class="font-medium tracking-wide">About</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition-colors w-[120px] lg:w-auto">
+                            <i class="fa-solid fa-building text-lg w-5 text-center"></i>
+                            <span class="font-medium tracking-wide">Properties</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition-colors w-[120px] lg:w-auto">
+                            <i class="fa-solid fa-handshake text-lg w-5 text-center"></i>
+                            <span class="font-medium tracking-wide">Services</span>
+                        </a>
+                         <a href="#" class="flex items-center gap-3 hover:text-brand-gold transition-colors w-[120px] lg:w-auto">
+                            <i class="fa-solid fa-list-check text-lg w-5 text-center"></i>
+                            <span class="font-medium tracking-wide">Process</span>
+                        </a>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-brand-dark transition-all duration-300 text-lg transform hover:-translate-y-1">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-brand-dark transition-all duration-300 text-lg transform hover:-translate-y-1">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-brand-dark transition-all duration-300 text-lg transform hover:-translate-y-1">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold hover:text-brand-dark transition-all duration-300 text-lg transform hover:-translate-y-1">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright line -->
+            <div class="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500 font-medium tracking-wide">
+                <p>&copy; 2024 Vasundhara Builders. All rights reserved.</p>
+                <p class="font-serif text-brand-gold text-sm italic">Build Today. Live Tomorrow.</p>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <a href="#" class="absolute bottom-10 right-10 w-14 h-14 bg-brand-gold text-brand-dark rounded-full flex items-center justify-center hover:bg-white transition-colors duration-300 shadow-[0_0_20px_rgba(223,186,115,0.5)] z-20 group">
+            <i class="fa-solid fa-chevron-up group-hover:-translate-y-1 transition-transform"></i>
+        </a>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+            offset: 50, // offset (in px) from the original trigger point
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
